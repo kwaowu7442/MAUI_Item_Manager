@@ -1,0 +1,29 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ItemApp.Views.DataEntryPage" Title="Data Entry">
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="12">
+            <Label Text="Kwadwo Owusu" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <Label Text="Please provide the following information:" HorizontalOptions="Center"/>
+            <Label Text="Item ID"/>
+            <Entry Text="{Binding ItemId}"/>
+            <Label Text="Item Name"/>
+            <Entry Text="{Binding ItemName}"/>
+            <Label Text="Item Description"/>
+            <Entry Text="{Binding ItemDescription}"/>
+            <Button Text="Save" Command="{Binding SaveCommand}"/>
+            <Label Text="{Binding Message}" TextColor="Red"/>
+            <CollectionView ItemsSource="{Binding Items}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Padding="0,6">
+                            <Label Text="{Binding ItemId}" FontAttributes="Bold"/>
+                            <Label Text="{Binding ItemName}"/>
+                            <Label Text="{Binding ItemDescription}"/>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

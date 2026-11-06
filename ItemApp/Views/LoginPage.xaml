@@ -1,0 +1,17 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ItemApp.Views.LoginPage" Title="Login">
+    <VerticalStackLayout Padding="30" Spacing="12">
+        <Label Text="Kwadwo Owusu" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center"/>
+        <Label Text="Wk 4 Performance Assessment" HorizontalOptions="Center"/>
+        <Label Text="User Name"/>
+        <Entry Text="{Binding UserName}"/>
+        <Label Text="Password"/>
+        <Entry Text="{Binding Password}" IsPassword="True"/>
+        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+            <Button Text="Login" Command="{Binding LoginCommand}"/>
+            <Button Text="Cancel" Command="{Binding CancelCommand}"/>
+        </HorizontalStackLayout>
+        <Label Text="{Binding Message}" TextColor="Red"/>
+    </VerticalStackLayout>
+</ContentPage>
